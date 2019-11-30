@@ -23,21 +23,37 @@ function findGrossSalary() {
     let dept = document.getElementById("dept").value;
     let hours = parseFloat(document.getElementById("hours").value);
     let empCode = document.getElementById("empCode").value;
+    let fixSal = parseFloat(document.getElementById("fixSal").value);
     let grossSalary = parseFloat(document.getElementById("grossSalary"));
+    let hourlyRate = parseFloat(document.getElementById("hourlyRate"));
+    let excessHours = parseFloat(document.getElementById("excessHours"));
+
+
     let qCode = document.getElementById("qualiCode");
 
-    //if (empCode.selectedIndex == 0) {
-    if (qCode.selectedIndex == 0) {
-        grossSalary = (175 * hours) + 1500;
-        alert(`${grossSalary}`);
+    if (empCode.selectedIndex == 0) {
+        if (qCode.selectedIndex == 0) {
+            grossSalary = (175 * hours) + 1500;
+            alert(`${grossSalary}`);
+        } else {
+            grossSalary = (100 * hours) + 600;
+            alert(`${grossSalary}`);
+        }
     } else {
-        grossSalary = (100 * hours) + 600;
-        alert(`${grossSalary}`);
-    }
-    // } else {
-    //     if (hours < 160) {
+        if (hours == 160) {
+            alert(`${fixSal}`);
 
-    //     }
-    // }
+        } else if (hours < 160) {
+            hourlyRate = fixSal / 160;
+            grossSalary = hourlyRate * hours;
+            alert(`${grossSalary}`);
+        } else {
+            let excessHours = (hours - 160);
+            hourlyRate = fixSal / 160;
+            grossSalary = ((hourlyRate * 160) + (excessHours * hourlyRate * 2));
+            alert(`${grossSalary}`);
+
+        }
+    }
 }
 btn.addEventListener("click", findGrossSalary);
