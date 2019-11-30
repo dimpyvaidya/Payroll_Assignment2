@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Pay Slip</title>
+</head>
+
+<body>
+    <form>
+        <label>Enter Employee Number :</label>
+        <input type="text" id="num"><br><br>
+
+        <label>Enter Employee Name :</label>
+        <input type="text" id="name"><br><br>
+
+        <label>Enter Department :</label>
+        <input type="text" id="dept"><br><br>
+
+        <label>Enter Working hours :</label>
+        <input type="text" id="hours"><br><br>
+
+        <label>Select payroll month :</label>
+        <select id="month"></select><br><br>
+
+        <label>Enter Employee Type Code :</label>
+        <select id="empCode">
+            <option value="F">Faculty</option>
+            <option value="R">Regular workers</option>
+        </select><br><br>
+
+        <label>Enter Employee Qualification Code :</label>
+        <select id="qualiCode">
+            <option value="M">Master Degree</option>
+            <option value="B">Bachelor Degree</option>
+        </select><br><br>
+
+        <input type="button" id="btn" value="Get your pay slip">
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
