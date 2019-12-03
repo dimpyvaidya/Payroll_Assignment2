@@ -22,9 +22,6 @@
         <label>Enter Working hours :</label>
         <input type="text" id="hours"><br><br>
 
-        <label>Select payroll month :</label>
-        <select id="month"></select><br><br>
-
         <label>Enter Employee Type Code :</label>
         <select id="empCode">
             <option value="F">Faculty</option>
@@ -39,9 +36,32 @@
             <option value="B">Bachelor Degree</option>
         </select><br><br>
 
-        <input type="button" id="btn" value="Get your pay slip">
+
+        <div>
+            <input type="button" id="btn" value="Get your pay slip">
+
+            <h2>Pay Slip</h2>
+            <label> Employee Number :</label>
+            <label id="num"></label><br><br>
+            <label> Employee Name :</label>
+            <label id="name"></label><br><br>
+            <label> Department :</label>
+            <label id="dept"></label><br><br>
+            <label> Employee Type Code :</label>
+            <label id="empCode"></label><br><br>
+            <label> Working hours :</label>
+            <label id="hours"></label><br><br>
+            <label> Working hours :</label>
+            <label id="hours"></label><br><br>
+            <label>  Gross Salary :</label>
+            <label id="grossSalary"></label><br><br>
+            <label> Deduction :</label>
+            <label id="totalDeduction"></label><br><br>
+            <label>  Net Salary :</label>
+            <label id="netPay"></label><br><br>
+
+        </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </body>
 
