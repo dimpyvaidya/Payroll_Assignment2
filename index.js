@@ -1,6 +1,6 @@
 let btn = document.getElementById("btn");
 
-let num = parseFloat(document.getElementById("num").value);
+let num = document.getElementById("num").value;
 let name = document.getElementById("name").value;
 let dept = document.getElementById("dept").value;
 let empCode = document.getElementById("empCode").value;
@@ -12,37 +12,36 @@ let incomeTax = parseFloat(document.getElementById("incomeTax"));
 let totalDeduction = parseFloat(document.getElementById("totalDeduction"));
 let netPay = parseFloat(document.getElementById("netPay"));
 
+document.getElementById(`empCode`).addEventListener(`change`, () => {
+    document.getElementById('fixSalDiv').classList.toggle('show');
+});
+
 function netPayable() {
     //gross salary
     let hours = parseFloat(document.getElementById("hours").value);
     let fixSal = parseFloat(document.getElementById("fixSal").value);
 
     if (empCode.selectedIndex == 0) {
+
         if (qCode.selectedIndex == 0) {
             grossSalary = (175 * hours) + 1500;
-            // alert(`${grossSalary}`);
         } else {
             grossSalary = (100 * hours) + 600;
-            // alert(`${grossSalary}`);
         }
     } else {
+        document.getElementById('fixSalDiv').classList.toggle('show');
         if (hours == 160) {
-            // alert(`${fixSal}`);
-
+            grossSalary = grossSalary;
         } else if (hours < 160) {
             hourlyRate = fixSal / 160;
             grossSalary = hourlyRate * hours;
-            // alert(`${grossSalary}`);
         } else {
             excessHours = (hours - 160);
             hourlyRate = fixSal / 160;
             grossSalary = ((hourlyRate * 160) + (excessHours * hourlyRate * 2));
-            // alert(`${grossSalary}`);
-
 
             //deduction
             incomeTax = ((grossSalary * 25) / 100).toFixed(2);
-
             if (grossSalary > 3000) {
                 totalDeduction = incomeTax + 33;
             } else {
@@ -51,11 +50,17 @@ function netPayable() {
 
             //net payable
             netPay = grossSalary - totalDeduction;
-
         }
     }
+    document.getElementById(`numOutput`).innerText = num;
+    document.getElementById(`nameOutput`).innerText = name;
+    document.getElementById(`deptOutput`).innerText = dept;
+    document.getElementById(`empCodeOutput`).innerText = empCode;
+    document.getElementById(`hoursOutput`).innerText = hours;
+    document.getElementById(`grossSalaryOutput`).innerText = grossSalary;
+    document.getElementById(`totalDeductionOutput`).innerText = totalDeduction;
+    document.getElementById(`netPayOutput`).innerText = netPay;
+
 }
-
-
 
 btn.addEventListener("click", netPayable);

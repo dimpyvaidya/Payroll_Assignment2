@@ -11,58 +11,61 @@
 </head>
 
 <body>
-    <main class="structure">
-        <div>
-            <label>Enter Employee Number :</label><br><br>
-            <label>Enter Employee Name :</label><br><br>
-            <label>Enter Department :</label><br><br>
-            <label>Enter Working hours :</label><br><br>
-            <label>Enter Employee Type Code :</label><br><br>
-            <label>Enter Regular Faculty fixed Salary :</label><br><br>
-            <label>Enter Employee Qualification Code :</label><br><br>
-        </div>
-        <div>
+    <article class="structure">
+        <main>
+            <h2>Enter following details to get Pay Slip</h2>
+            <label>Enter Employee Number :</label>
             <input type="text" id="num"><br><br>
+
+            <label>Enter Employee Name :</label>
             <input type="text" id="name"><br><br>
+
+            <label>Enter Department :</label>
             <input type="text" id="dept"><br><br>
+
+            <label>Enter Working hours :</label>
             <input type="text" id="hours"><br><br>
+
+            <label>Enter Employee Type Code :</label>
             <select id="empCode">
                 <option value="F">Faculty</option>
                 <option value="R">Regular workers</option>
             </select><br><br>
-            <input type="text" id="fixSal"><br><br>
+
+            <div class="hide" id="fixSalDiv">
+                <label>Enter Regular Faculty fixed Salary :</label>
+                <input type="text" id="fixSal"><br><br>
+            </div>
+
+            <label>Enter Employee Qualification Code :</label>
             <select id="qualiCode">
                 <option value="M">Master Degree</option>
                 <option value="B">Bachelor Degree</option>
             </select><br><br>
+            <input type="button" id="btn" value="Get your pay slip" class="button buttonPaySlip">
+
+        </main>
+
+        <div>
+            <h2>Pay Slip</h2>
+            <label> Employee Number :</label>
+            <label id="numOutput"></label><br><br>
+            <label> Employee Name :</label>
+            <label id="nameOutput"></label><br><br>
+            <label> Department :</label>
+            <label id="deptOutput"></label><br><br>
+            <label> Employee Type Code :</label>
+            <label id="empCodeOutput"></label><br><br>
+            <label> Working hours :</label>
+            <label id="hoursOutput"></label><br><br>
+            <label>  Gross Salary :</label>
+            <label id="grossSalaryOutput"></label><br><br>
+            <label> Deduction :</label>
+            <label id="totalDeductionOutput"></label><br><br>
+            <label>  Net Salary :</label>
+            <label id="netPayOutput"></label><br><br>
         </div>
-    </main>
-
-    <div>
-        <input type="button" id="btn" value="Get your pay slip">
-
-        <h2>Pay Slip</h2>
-        <label> Employee Number :</label>
-        <label id="num"></label><br><br>
-        <label> Employee Name :</label>
-        <label id="name"></label><br><br>
-        <label> Department :</label>
-        <label id="dept"></label><br><br>
-        <label> Employee Type Code :</label>
-        <label id="empCode"></label><br><br>
-        <label> Working hours :</label>
-        <label id="hours"></label><br><br>
-        <label> Working hours :</label>
-        <label id="hours"></label><br><br>
-        <label>  Gross Salary :</label>
-        <label id="grossSalary"></label><br><br>
-        <label> Deduction :</label>
-        <label id="totalDeduction"></label><br><br>
-        <label>  Net Salary :</label>
-        <label id="netPay"></label><br><br>
-
-    </div>
-    </form>
+    </article>
     <script src="index.js"></script>
 </body>
 
