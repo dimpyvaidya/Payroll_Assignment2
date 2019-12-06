@@ -5,67 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employee Pay Slip</title>
+    <title>Pay Slip Generator</title>
     <link rel="stylesheet" href="index.css">
 
 </head>
 
 <body>
     <article class="structure">
-        <main>
-            <h2>Enter following details to get Pay Slip</h2>
+        <main class="input_output_box ">
             <label>Enter Employee Number :</label>
-            <input type="text" id="num"><br><br>
+            <input type="text" id="num">
 
             <label>Enter Employee Name :</label>
-            <input type="text" id="name"><br><br>
+            <input type="text" id="name">
 
             <label>Enter Department :</label>
-            <input type="text" id="dept"><br><br>
+            <input type="text" id="dept">
 
             <label>Enter Working hours :</label>
-            <input type="text" id="hours"><br><br>
+            <input type="text" id="hours">
 
             <label>Enter Employee Type Code :</label>
             <select id="empCode">
                 <option value="F">Faculty</option>
-                <option value="R">Regular workers</option>
-
-                
-            </select><br><br>
+                <option value="R">Regular workers</option> 
+            </select>
 
             <div class="hide" id="fixSalDiv">
                 <label>Enter Regular Faculty fixed Salary :</label>
-                <input type="text" id="fixSal"><br><br>
+                <input type="text" id="fixSal">
             </div>
 
             <label>Enter Employee Qualification Code :</label>
             <select id="qualiCode">
                 <option value="M">Master Degree</option>
                 <option value="B">Bachelor Degree</option>
-            </select><br><br>
+            </select>
             <input type="button" id="btn" value="Generate pay slip" class="button buttonPaySlip">
 
         </main>
 
-        <div>
+        <div class="input_output_box output output_font">
             <h2>Pay Slip</h2>
-            <label> Employee Number :</label>
-            <label id="numOutput"></label><br><br>
-            <label> Employee Name :</label>
-            <label id="nameOutput"></label><br><br>
-            <label> Department :</label>
-            <label id="deptOutput"></label><br><br>
-            <label> Employee Type Code :</label>
-            <label id="empCodeOutput"></label><br><br>
-            <label> Working hours :</label>
-            <label id="hoursOutput"></label><br><br>
-            <label>  Gross Salary :</label>
-            <label id="grossSalaryOutput"></label><br><br>
-            <label> Deduction :</label>
-            <label id="totalDeductionOutput"></label><br><br>
-            <label>  Net Salary :</label>
-            <label id="netPayOutput"></label><br><br>
+            <main class="block_structure">
+                <div>
+                    <label class="output"> Employee Number </label>
+                    <label class="output"> Employee Name </label>
+                    <label class="output"> Department </label>
+                    <label class="output"> Employee Type Code </label>
+                    <label class="output"> Working hours </label>
+                    <label class="output">  Gross Salary </label>
+                    <label class="output"> Deduction </label>
+                    <label class="output">  Net Salary </label>
+                </div>
+                <div>
+                    <label id="numOutput" class="output"></label>
+                    <label id="nameOutput" class="output"></label>
+                    <label id="deptOutput" class="output"></label>
+                    <label id="empCodeOutput" class="output"></label>
+                    <label id="hoursOutput" class="output"></label>
+                    <label id="grossSalaryOutput" class="output"></label>
+                    <label id="totalDeductionOutput" class="output"></label>
+                    <label id="netPayOutput" class="output"></label>
+                </div>
+            </main>
         </div>
     </article>
     <script src="index.js"></script>

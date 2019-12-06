@@ -1,13 +1,19 @@
 body {
-    /* margin: 0 20em; */
     font-family: arial, helvetica;
     text-align: left;
+    padding: 1em;
+}
+
+.input_output_box {
     padding: 2em;
+    border-style: solid;
+    box-shadow: 5px 10px #888888;
+    background-color: mintcream;
 }
 
 .structure {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 0.5em;
 }
 
@@ -15,8 +21,15 @@ label {
     margin-bottom: 1em;
 }
 
-.input {
-    font-size: 1em;
+input[type=text],
+select {
+    width: 100%;
+    padding: 0.7em 20px;
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .hide {
@@ -49,4 +62,35 @@ label {
 .buttonPaySlip:hover {
     background-color: #555555;
     color: white;
+}
+
+.block_structure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5em;
+}
+
+h2 {
+    text-align: center;
+}
+
+.output {
+    display: block;
+}
+
+.output_font {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+}
+
+@media screen and (min-width:768px) {
+    .structure {
+        grid-template-columns: 1fr 1fr;
+    }
+    .output {
+        margin: 0.5em 0;
+    }
+    .output_font {
+        font-size: 1.2em;
+    }
 }
