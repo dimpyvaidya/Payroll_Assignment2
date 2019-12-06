@@ -44,9 +44,13 @@ function output() {
 
     function calcDeduction() {
         //deduction
-        incomeTax.innerHTML = (parseFloat(grossSalary.innerHTML * 25) / 100).toFixed(2);
+        const incomeTaxPercentage = 25;
+
+        incomeTax.innerHTML = (parseFloat(grossSalary.innerHTML * incomeTaxPercentage) / 100).toFixed(2);
         if (grossSalary.innerHTML > 3000) {
             totalDeduction.innerHTML = parseFloat(incomeTax.innerHTML) + 33;
+        } else if (grossSalary.innerHTML < 2500) {
+            totalDeduction.innerHTML = 19.20;
         } else {
             totalDeduction.innerHTML = parseFloat(incomeTax.innerHTML) + 19.20;
         }
