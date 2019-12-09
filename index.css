@@ -74,6 +74,10 @@ h2 {
     text-align: center;
 }
 
+span {
+    padding: 1em;
+}
+
 .output {
     display: block;
 }
@@ -81,6 +85,11 @@ h2 {
 .output_font {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.1em;
+}
+
+.output_ui {
+    list-style-type: none;
+    padding: 0.5em 0;
 }
 
 @media screen and (min-width:768px) {
