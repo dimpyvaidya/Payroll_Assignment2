@@ -15,21 +15,19 @@ function calcGrossSalary() {
     //gross salary
     if (empCode.selectedIndex == 0) {
         if (qCode.selectedIndex == 0) {
-            grossSalary = (175 * parseFloat(hours.value)) + 1500;
+            grossSalary = ((175 * parseFloat(hours.value)) + 1500).toFixed(2);
         } else {
-            grossSalary = (100 * parseFloat(hours.value)) + 600;
+            grossSalary = ((100 * parseFloat(hours.value)) + 600).toFixed(2);
         }
     } else {
         document.getElementById('fixSalDiv').classList.toggle('show');
-        if (hours.value == 160) {
-            grossSalary = grossSalary.value;
-        } else if (hours.value < 160) {
+        if (hours.value < 160) {
             hourlyRate = (parseFloat(fixSal.value) / 160).toFixed(2);
-            grossSalary = parseFloat(hourlyRate * hours.value);
+            grossSalary = parseFloat(hourlyRate * hours.value).toFixed(2);
         } else {
             excessHours = parseFloat(hours.value) - 160;
             hourlyRate = (parseFloat(fixSal.value) / 160).toFixed(2);
-            grossSalary = ((parseFloat(hourlyRate) * 160) + (excessHours * (hourlyRate) * 2));
+            grossSalary = ((parseFloat(hourlyRate) * 160) + (excessHours * (hourlyRate) * 2)).toFixed(2);
         }
     }
     return grossSalary;
@@ -58,17 +56,17 @@ function calcNetPay() {
     //net payable
     const grossSalary = calcGrossSalary();
     const deductions = calcDeduction(grossSalary);
-    netPay = grossSalary - deductions;
+    netPay = (grossSalary - deductions).toFixed(2);
 
-    //output
+    //printing output
     document.getElementById(`numOutput`).innerText = num.value;
     document.getElementById(`nameOutput`).innerText = name.value;
     document.getElementById(`deptOutput`).innerText = dept.value;
     document.getElementById(`empCodeOutput`).innerText = empCode.value;
     document.getElementById(`hoursOutput`).innerText = hours.value;
-    document.getElementById(`grossSalaryOutput`).innerHTML = grossSalary;
-    document.getElementById(`totalDeductionOutput`).innerHTML = deductions;
-    document.getElementById(`netPayOutput`).innerHTML = netPay;
+    document.getElementById(`grossSalaryOutput`).innerHTML = '$' + grossSalary;
+    document.getElementById(`totalDeductionOutput`).innerHTML = '$' + deductions;
+    document.getElementById(`netPayOutput`).innerHTML = '$' + netPay;
 }
 
 btn.addEventListener("click", calcNetPay);
